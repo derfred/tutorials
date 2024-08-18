@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tutorials"
+version = "0.1.0"
+description = ""
+authors = ["Frederik Fix <ich@derfred.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+matplotlib = "^3.9.1.post1"
+mlx-lm = { git = "https://github.com/ml-explore/mlx-examples.git", rev = "33905447f92dc7ce38680f7f6bd8d3335dd204e5", subdirectory = "llms/mlx_lm" }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
