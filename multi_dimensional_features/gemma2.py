@@ -5,10 +5,10 @@ import mlx.nn as nn
 from mlx_lm.models.base import create_attention_mask
 from mlx_lm.models.gemma2 import ModelArgs, TransformerBlock, RMSNorm
 
-def build_hooks(hooks):
-  if hooks is None:
+def build_hook(hook):
+  if hook is None:
     return lambda x, l=None: x
-  return hooks
+  return hook
 
 @staticmethod
 def load(model_path: str = "mlx-community/gemma-2-9b-8bit"):
@@ -63,36 +63,36 @@ class Model(nn.Module):
         result[k] = v
     return result
 
-  def __call__(self, inputs: mx.array, cache=None, hooks=None):
-    hooks = build_hooks(hooks)
+  def __call__(self, inputs: mx.array, cache=None, hook=None):
+    hook = build_hook(hook)
     if cache is None:
       cache = [None] * len(self.layers)
 
     h    = self.embed_tokens(inputs)
     h    = h * (self.args.hidden_size**0.5)
     mask = create_attention_mask(h, cache)
-    h    = hooks(h, "hook_embed")
+    h    = hook(h, "hook_embed")
 
     for i, (layer, c) in enumerate(zip(self.layers, cache)):
-      h = hooks(h, f"blocks.{i}.hook_resid_pre")
+      h = hook(h, f"blocks.{i}.hook_resid_pre")
 
       r = layer.self_attn(layer.input_layernorm(h.astype(mx.float32)), mask, c)
       r = layer.post_attention_layernorm(r)
-      h = h + hooks(r, f"blocks.{i}.hook_attn_out")
+      h = h + hook(r, f"blocks.{i}.hook_attn_out")
 
-      h = hooks(h, f"blocks.{i}.hook_resid_mid")
+      h = hook(h, f"blocks.{i}.hook_resid_mid")
 
       r = layer.mlp(layer.pre_feedforward_layernorm(h).astype(mx.float16)).astype(
           mx.float32
       )
       r = layer.post_feedforward_layernorm(r)
-      h = h + hooks(r, f"blocks.{i}.hook_mlp_out")
+      h = h + hook(r, f"blocks.{i}.hook_mlp_out")
 
-      h = hooks(h, f"blocks.{i}.hook_resid_post")
+      h = hook(h, f"blocks.{i}.hook_resid_post")
 
-    out = hooks(self.norm(h), "ln_final.hook_normalized")
+    out = hook(self.norm(h), "ln_final.hook_normalized")
     out = self.embed_tokens.as_linear(out)
     out = mx.tanh(out / self.args.final_logit_softcapping)
     out = out * self.args.final_logit_softcapping
 
-    return hooks(out)
+    return hook(out)
