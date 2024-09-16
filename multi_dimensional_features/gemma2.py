@@ -41,10 +41,11 @@ class Model(nn.Module):
     self.args              = args
     self.vocab_size        = args.vocab_size
     self.num_hidden_layers = args.num_hidden_layers
+    self.hidden_size       = args.hidden_size
     assert self.vocab_size > 0
     self.embed_tokens = nn.Embedding(args.vocab_size, args.hidden_size)
     self.layers       = [TransformerBlock(args=args) for _ in range(args.num_hidden_layers)]
-    self.norm = RMSNorm(args.hidden_size, eps=args.rms_norm_eps)
+    self.norm         = RMSNorm(args.hidden_size, eps=args.rms_norm_eps)
 
   @property
   def head_dim(self):
@@ -96,3 +97,34 @@ class Model(nn.Module):
     out = out * self.args.final_logit_softcapping
 
     return hook(out)
+
+class JumpReLUSAE(nn.Module):
+  @staticmethod
+  def load(model="9b-pt", hook="res", layer=20, width="16k", l0=58):
+    from huggingface_hub import hf_hub_download
+    weights_path = hf_hub_download(repo_id=f"google/gemma-scope-{model}-{hook}", filename=f"layer_{layer}/width_{width}/average_l0_{l0}/params.npz")
+    weights      = mx.load(weights_path)
+    model        = JumpReLUSAE(*weights["W_enc"].shape)
+    model.load_weights(list(weights.items()))
+    return model
+
+  def __init__(self, d_model, d_sae):
+    super().__init__()
+    self.W_enc     = mx.zeros((d_model, d_sae))
+    self.W_dec     = mx.zeros((d_sae, d_model))
+    self.threshold = mx.zeros(d_sae)
+    self.b_enc     = mx.zeros(d_sae)
+    self.b_dec     = mx.zeros(d_model)
+
+  def encode(self, input_acts):
+    pre_acts = input_acts @ self.W_enc + self.b_enc
+    mask = (pre_acts > self.threshold)
+    return mask * nn.relu(pre_acts)
+
+  def decode(self, acts):
+    return acts @ self.W_dec + self.b_dec
+
+  def forward(self, acts):
+    acts = self.encode(acts)
+    recon = self.decode(acts)
+    return recon
