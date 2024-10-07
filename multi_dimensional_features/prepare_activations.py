@@ -1,8 +1,9 @@
-import glob, math, os.path, time
+import glob, math, os.path, sys
 import numpy as np
 import mlx.core as mx
 from tqdm import tqdm
 
+sys.path.insert(0, os.path.join(os.getcwd(), "..", "support"))
 import gemma2
 
 class SAEHook:
