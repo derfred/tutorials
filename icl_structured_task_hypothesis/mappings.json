@@ -1,0 +1,766 @@
+{
+    "sst2": {
+        "labels": {
+            "negative": "Ne",
+            "positive": "por"
+        },
+        "keywords": {
+            "negative": [
+                "poor",
+                "terrible",
+                "worse",
+                "bad",
+                "awful",
+                "fault",
+                "inferior",
+                "problem",
+                "regret",
+                "disappoint"
+            ],
+            "positive": [
+                "excellent",
+                "perfect",
+                "best",
+                "satisfied",
+                "loved",
+                "favorite",
+                "awesome",
+                "superior",
+                "pleasant",
+                "recommend"
+            ]
+        },
+        "synonyms": {
+            "negative": [
+                "poor",
+                "bad",
+                "inferior",
+                "unfortunate",
+                "deficient"
+            ],
+            "positive": [
+                "good",
+                "excellent",
+                "superior",
+                "pleasant",
+                "satisfactory"
+            ]
+        },
+        "antonyms": {
+            "positive": [
+                "poor",
+                "bad",
+                "inferior",
+                "unfortunate",
+                "deficient"
+            ],
+            "negative": [
+                "good",
+                "excellent",
+                "superior",
+                "pleasant",
+                "satisfactory"
+            ]
+        }
+    },
+    "sst5": {
+        "labels": {
+            "terrible": "Ne",
+            "bad": "Vol",
+            "okay": "tam",
+            "good": "Mag",
+            "great": "por"
+        },
+        "keywords": {
+            "terrible": [
+                "terrible",
+                "bad",
+                "poor",
+                "awful",
+                "fault",
+                "inferior",
+                "problem",
+                "regret",
+                "disappoint"
+            ],
+            "okay": [
+                "okay",
+                "fine",
+                "alright",
+                "satisfied",
+                "loved",
+                "favorite",
+                "pleasant",
+                "recommend"
+            ],
+            "good": [
+                "good",
+                "nice",
+                "decent",
+                "acceptable",
+                "helpful",
+                "joy",
+                "help",
+                "favorite"
+            ],
+            "great": [
+                "great",
+                "fantastic",
+                "amazing",
+                "marvelous",
+                "wonderful"
+            ],
+            "excellent": [
+                "excellent",
+                "perfect",
+                "best",
+                "awesome",
+                "superior"
+            ]
+        },
+        "synonyms": {
+            "terrible": [
+                "terrible",
+                "awful",
+                "horrible",
+                "dreadful",
+                "atrocious"
+            ],
+            "okay": [
+                "okay",
+                "fair",
+                "adequate",
+                "passable",
+                "middling"
+            ],
+            "good": [
+                "good",
+                "nice",
+                "decent",
+                "acceptable",
+                "satisfactory"
+            ],
+            "great": [
+                "great",
+                "fantastic",
+                "marvelous",
+                "wonderful",
+                "splendid"
+            ],
+            "excellent": [
+                "excellent",
+                "superb",
+                "outstanding",
+                "remarkable",
+                "brilliant"
+            ]
+        },
+        "antonyms": {
+            "terrible": [
+                "good",
+                "nice",
+                "decent",
+                "acceptable",
+                "satisfactory"
+            ],
+            "okay": [
+                "excellent",
+                "superb",
+                "outstanding",
+                "remarkable",
+                "brilliant"
+            ],
+            "good": [
+                "terrible",
+                "awful",
+                "horrible",
+                "dreadful",
+                "atrocious"
+            ],
+            "great": [
+                "okay",
+                "fair",
+                "adequate",
+                "passable",
+                "middling"
+            ],
+            "excellent": [
+                "poor",
+                "bad",
+                "inferior",
+                "unfortunate",
+                "deficient"
+            ]
+        }
+    },
+    "CR": {
+        "labels": {
+            "negative": "Ne",
+            "positive": "por"
+        },
+        "keywords": {
+            "negative": [
+                "poor",
+                "terrible",
+                "worse",
+                "bad",
+                "awful",
+                "fault",
+                "inferior",
+                "problem",
+                "regret",
+                "disappoint"
+            ],
+            "positive": [
+                "excellent",
+                "perfect",
+                "best",
+                "satisfied",
+                "loved",
+                "favorite",
+                "awesome",
+                "superior",
+                "pleasant",
+                "recommend"
+            ]
+        },
+        "synonyms": {
+            "negative": [
+                "poor",
+                "bad",
+                "inferior",
+                "unfortunate",
+                "deficient"
+            ],
+            "positive": [
+                "good",
+                "excellent",
+                "superior",
+                "pleasant",
+                "satisfactory"
+            ]
+        },
+        "antonyms": {
+            "positive": [
+                "poor",
+                "bad",
+                "inferior",
+                "unfortunate",
+                "deficient"
+            ],
+            "negative": [
+                "good",
+                "excellent",
+                "superior",
+                "pleasant",
+                "satisfactory"
+            ]
+        }
+    },
+    "ag_news": {
+        "labels": {
+            "world": "Mag",
+            "sports": "Am",
+            "business": "Num",
+            "science": "Lab"
+        },
+        "keywords": {
+            "world": [
+                "conflict",
+                "election",
+                "global",
+                "crisis",
+                "politics",
+                "war",
+                "peace",
+                "regime",
+                "protest",
+                "climate"
+            ],
+            "sports": [
+                "win",
+                "team",
+                "game",
+                "player",
+                "score",
+                "season",
+                "championship",
+                "coach",
+                "injury",
+                "fans"
+            ],
+            "business": [
+                "market",
+                "company",
+                "stock",
+                "profit",
+                "loss",
+                "growth",
+                "trade",
+                "startup",
+                "shares",
+                "industry"
+            ],
+            "science": [
+                "data",
+                "technology",
+                "species",
+                "experiment",
+                "research",
+                "discovery",
+                "theory",
+                "study",
+                "energy",
+                "physics"
+            ]
+        },
+        "synonyms": {
+            "world": [
+                "world",
+                "global",
+                "international",
+                "planetary",
+                "universal"
+            ],
+            "sports": [
+                "sports",
+                "athletics",
+                "games",
+                "competition",
+                "leisure"
+            ],
+            "business": [
+                "business",
+                "finance",
+                "economy",
+                "corporate",
+                "commercial"
+            ],
+            "science": [
+                "science",
+                "technology",
+                "research",
+                "discovery",
+                "innovation"
+            ]
+        },
+        "antonyms": {
+            "world": [
+                "sports",
+                "athletics",
+                "games",
+                "competition",
+                "leisure"
+            ],
+            "sports": [
+                "world",
+                "global",
+                "international",
+                "planetary",
+                "universal"
+            ],
+            "business": [
+                "science",
+                "technology",
+                "research",
+                "discovery",
+                "innovation"
+            ],
+            "science": [
+                "business",
+                "finance",
+                "economy",
+                "corporate",
+                "commercial"
+            ]
+        }
+    },
+    "dbpedia": {
+        "labels": {
+            "company": "qu",
+            "school": "dol",
+            "artist": "Mag",
+            "player": "ii",
+            "politics": "us",
+            "transport": "sit",
+            "building": "un",
+            "nature": "non",
+            "village": "sed",
+            "animal": "up",
+            "plant": "tam",
+            "album": "Vol",
+            "film": "Am",
+            "book": "Nu"
+        },
+        "keywords": {
+            "company": [
+                "business",
+                "industry",
+                "market",
+                "employee",
+                "product",
+                "service",
+                "global",
+                "shares",
+                "headquarters",
+                "management"
+            ],
+            "school": [
+                "education",
+                "students",
+                "teachers",
+                "campus",
+                "classes",
+                "degree",
+                "sports",
+                "research",
+                "library",
+                "principal"
+            ],
+            "artist": [
+                "gallery",
+                "style",
+                "canvas",
+                "commission",
+                "portrait",
+                "modern",
+                "installation",
+                "studio",
+                "critique",
+                "museum"
+            ],
+            "player": [
+                "sports",
+                "team",
+                "games",
+                "coach",
+                "championship",
+                "training",
+                "record",
+                "league",
+                "medal",
+                "skills"
+            ],
+            "politics": [
+                "government",
+                "policy",
+                "election",
+                "party",
+                "candidate",
+                "debate",
+                "law",
+                "president",
+                "campaign",
+                "vote"
+            ],
+            "transport": [
+                "vehicle",
+                "traffic",
+                "rail",
+                "road",
+                "air",
+                "network",
+                "fuel",
+                "safety",
+                "schedule",
+                "port"
+            ],
+            "building": [
+                "architecture",
+                "construction",
+                "design",
+                "foundation",
+                "commercial",
+                "material",
+                "engineer",
+                "planning",
+                "urban",
+                "space"
+            ],
+            "nature": [
+                "environment",
+                "forest",
+                "conservation",
+                "species",
+                "habitat",
+                "climate",
+                "ocean",
+                "mountains",
+                "river",
+                "park"
+            ],
+            "village": [
+                "rural",
+                "community",
+                "population",
+                "tradition",
+                "local",
+                "settlement",
+                "craft",
+                "culture",
+                "families",
+                "homes"
+            ],
+            "animal": [
+                "species",
+                "habitat",
+                "conservation",
+                "bird",
+                "fish",
+                "behavior",
+                "domestic",
+                "wild",
+                "zoo",
+                "migration"
+            ],
+            "plant": [
+                "native",
+                "growth",
+                "flower",
+                "tree",
+                "leaf",
+                "seed",
+                "garden",
+                "conservation",
+                "soil",
+                "root"
+            ],
+            "album": [
+                "music",
+                "tracks",
+                "artist",
+                "release",
+                "genre",
+                "recording",
+                "label",
+                "chart",
+                "singles",
+                "lyrics"
+            ],
+            "film": [
+                "movie",
+                "director",
+                "actor",
+                "script",
+                "genre",
+                "cinema",
+                "scene",
+                "audience",
+                "production",
+                "cast"
+            ],
+            "book": [
+                "author",
+                "novel",
+                "pages",
+                "chapter",
+                "plot",
+                "characters",
+                "edition",
+                "cover",
+                "series",
+                "review"
+            ]
+        },
+        "synonyms": {
+            "company": [
+                "corporation",
+                "enterprise",
+                "firm",
+                "institution",
+                "organization"
+            ],
+            "school": [
+                "educational_institution",
+                "learning_center",
+                "academy",
+                "schoolhouse",
+                "institute"
+            ],
+            "artist": [
+                "artist",
+                "creator",
+                "painter",
+                "sculptor",
+                "designer"
+            ],
+            "player": [
+                "athlete",
+                "competitor",
+                "sportsperson",
+                "jock",
+                "player"
+            ],
+            "politics": [
+                "politics",
+                "government",
+                "legislation",
+                "policy",
+                "administration"
+            ],
+            "transport": [
+                "transportation",
+                "logistics",
+                "travel",
+                "commute",
+                "journey"
+            ],
+            "building": [
+                "structure",
+                "edifice",
+                "construction",
+                "building",
+                "architecture"
+            ],
+            "nature": [
+                "nature",
+                "environment",
+                "wildlife",
+                "ecosystem",
+                "biome"
+            ],
+            "village": [
+                "community",
+                "settlement",
+                "village",
+                "town",
+                "neighborhood"
+            ],
+            "animal": [
+                "animal",
+                "creature",
+                "fauna",
+                "beast",
+                "pet"
+            ],
+            "plant": [
+                "plant",
+                "flora",
+                "vegetation",
+                "greenery",
+                "herb"
+            ],
+            "album": [
+                "album",
+                "record",
+                "LP",
+                "EP",
+                "collection"
+            ],
+            "film": [
+                "film",
+                "movie",
+                "picture",
+                "cinema",
+                "entertainment"
+            ],
+            "book": [
+                "book",
+                "novel",
+                "literature",
+                "reading",
+                "publication"
+            ]
+        },
+        "antonyms": {
+            "company": [
+                "educational_institution",
+                "learning_center",
+                "academy",
+                "schoolhouse",
+                "institute"
+            ],
+            "school": [
+                "corporation",
+                "enterprise",
+                "firm",
+                "institution",
+                "organization"
+            ],
+            "artist": [
+                "athlete",
+                "competitor",
+                "sportsperson",
+                "jock",
+                "player"
+            ],
+            "player": [
+                "artist",
+                "creator",
+                "painter",
+                "sculptor",
+                "designer"
+            ],
+            "politics": [
+                "science",
+                "technology",
+                "research",
+                "discovery",
+                "innovation"
+            ],
+            "transport": [
+                "nature",
+                "environment",
+                "wildlife",
+                "ecosystem",
+                "biome"
+            ],
+            "building": [
+                "structure",
+                "edifice",
+                "construction",
+                "building",
+                "architecture"
+            ],
+            "nature": [
+                "plant",
+                "flora",
+                "vegetation",
+                "greenery",
+                "herb"
+            ],
+            "village": [
+                "community",
+                "settlement",
+                "village",
+                "town",
+                "neighborhood"
+            ],
+            "animal": [
+                "animal",
+                "creature",
+                "fauna",
+                "beast",
+                "pet"
+            ],
+            "plant": [
+                "film",
+                "movie",
+                "picture",
+                "cinema",
+                "entertainment"
+            ],
+            "album": [
+                "book",
+                "novel",
+                "literature",
+                "reading",
+                "publication"
+            ],
+            "film": [
+                "album",
+                "record",
+                "LP",
+                "EP",
+                "collection"
+            ],
+            "book": [
+                "politics",
+                "government",
+                "legislation",
+                "policy",
+                "administration"
+            ]
+        }
+    }
+}
